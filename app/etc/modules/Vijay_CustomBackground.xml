@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Vijay_CustomBackground extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Vijay
+ * @package        Vijay_CustomBackground
+ * @copyright      Copyright (c) 2016
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <modules>
+        <Vijay_CustomBackground>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Core />
+             </depends>
+        </Vijay_CustomBackground>
+    </modules>
+</config>

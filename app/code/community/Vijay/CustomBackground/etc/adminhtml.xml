@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Vijay_CustomBackground extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Vijay
+ * @package        Vijay_CustomBackground
+ * @copyright      Copyright (c) 2016
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <vijay_custombackground translate="title" module="vijay_custombackground">
+                                        <title>CustomBackground</title>
+                                    </vijay_custombackground>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <vijay_custombackground translate="title" module="vijay_custombackground">
+                        <title>Custom Background</title>
+                        <children>
+                            <background translate="title" module="vijay_custombackground">
+                                <title>Background</title>
+                                <sort_order>0</sort_order>
+                            </background>
+                        </children>
+                    </vijay_custombackground>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <vijay_custombackground translate="title" module="vijay_custombackground">
+            <title>Custom Background</title>
+            <sort_order>45</sort_order>
+            <children>
+                <background translate="title" module="vijay_custombackground">
+                    <title>Background</title>
+                    <action>adminhtml/custombackground_background</action>
+                    <sort_order>0</sort_order>
+                </background>
+            </children>
+        </vijay_custombackground>
+    </menu>
+</config>

@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Vijay_CustomBackground extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Vijay
+ * @package        Vijay_CustomBackground
+ * @copyright      Copyright (c) 2016
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <modules>
+        <Vijay_CustomBackground>
+            <version>1.0.0</version>
+        </Vijay_CustomBackground>
+    </modules>
+    <global>
+        <resources>
+            <vijay_custombackground_setup>
+                <setup>
+                    <module>Vijay_CustomBackground</module>
+                    <class>Vijay_CustomBackground_Model_Resource_Setup</class>
+                </setup>
+            </vijay_custombackground_setup>
+        </resources>
+        <blocks>
+            <vijay_custombackground>
+                <class>Vijay_CustomBackground_Block</class>
+            </vijay_custombackground>
+        </blocks>
+        <helpers>
+            <vijay_custombackground>
+                <class>Vijay_CustomBackground_Helper</class>
+            </vijay_custombackground>
+        </helpers>
+        <models>
+            <vijay_custombackground>
+                <class>Vijay_CustomBackground_Model</class>
+                <resourceModel>vijay_custombackground_resource</resourceModel>
+            </vijay_custombackground>
+            <vijay_custombackground_resource>
+                <class>Vijay_CustomBackground_Model_Resource</class>
+                <entities>
+                    <background>
+                        <table>vijay_custombackground_background</table>
+                    </background>
+                    <background_store>
+                        <table>vijay_custombackground_background_store</table>
+                    </background_store>
+                </entities>
+            </vijay_custombackground_resource>
+        </models>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <vijay_custombackground>
+                    <file>vijay_custombackground.xml</file>
+                </vijay_custombackground>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Vijay_CustomBackground>
+                    <files>
+                        <default>Vijay_CustomBackground.csv</default>
+                    </files>
+                </Vijay_CustomBackground>
+            </modules>
+        </translate>
+        <global_search>
+            <background>
+                <class>vijay_custombackground/adminhtml_search_background</class>
+                <acl>vijay_custombackground</acl>
+            </background>
+        </global_search>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Vijay_CustomBackground before="Mage_Adminhtml">Vijay_CustomBackground_Adminhtml</Vijay_CustomBackground>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <frontend>
+        <layout>
+            <updates>
+                <vijay_custombackground>
+                    <file>vijay_custombackground.xml</file>
+                </vijay_custombackground>
+            </updates>
+        </layout>
+    </frontend>
+    <default>
+        <vijay_custombackground>
+            <general>
+                <is_enabled>1</is_enabled>
+                <include_jquery>1</include_jquery>
+            </general>
+        </vijay_custombackground>
+	</default>
+</config>
