@@ -57,7 +57,7 @@ class Vijay_CustomBackground_Block_Adminhtml_Background_Edit_Tab_Form extends Ma
            )
         );
 
-        $fieldset->addField(
+        $customtypefield = $fieldset->addField(
             'background_target',
             'select',
             array(
@@ -67,8 +67,19 @@ class Vijay_CustomBackground_Block_Adminhtml_Background_Edit_Tab_Form extends Ma
                 'class' => 'required-entry',
 
                 'values'=> Mage::getModel('vijay_custombackground/background_attribute_source_backgroundtarget')->getAllOptions(true),
+                'onchange' => 'onchangeCustomStyleShow(this.value)',
            )
         );
+		
+		$customtypefield->setAfterElementHtml("<script type=\"text/javascript\">
+            function onchangeCustomStyleShow(e){
+                if (e == 'custom'){
+ 				$('background_background_custom_target').addClassName('required-entry');
+                } else {
+               	$('background_background_custom_target').removeClassName('required-entry');
+                }
+            }
+        </script>");
 		
 		$fieldset->addField(
             'background_custom_target',
@@ -147,7 +158,7 @@ class Vijay_CustomBackground_Block_Adminhtml_Background_Edit_Tab_Form extends Ma
                 'class' => 'required-entry required-file',
 
            )
-        )->setAfterElementHtml("<small>Allowed .jpg, .jpeg, .gif and .png File Extensions.</small><script type=\"text/javascript\">
+        )->setAfterElementHtml("<script type=\"text/javascript\">
         var imgvalue = $('background_background').readAttribute('value');
 		if(!imgvalue){
 			$('background_background').addClassName('required-entry');
