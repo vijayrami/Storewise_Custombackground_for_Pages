@@ -151,6 +151,10 @@ class Vijay_CustomBackground_Adminhtml_Custombackground_BackgroundController ext
 					$backgroundCategoryId = NULL;
 					$background->setData('background_category_id', $backgroundCategoryId);
 				}
+		                if(isset($data['background_target_type']) && (($data['background_target_type'] == '5') ||($data['background_target_type'] == '7') || ($data['background_target_type'] == '6') || ($data['background_target_type'] == '4') || ($data['background_target_type'] == '2'))){
+					$backgroundCategoryId = NULL;
+					$background->setData('background_category_id', $backgroundCategoryId);
+				}
 				/* Custom code Ends */
                 $background->setData('background', $backgroundName);
                 $background->save();
