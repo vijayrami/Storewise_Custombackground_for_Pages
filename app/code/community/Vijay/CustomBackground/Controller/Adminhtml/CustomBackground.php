@@ -58,4 +58,8 @@ class Vijay_CustomBackground_Controller_Adminhtml_CustomBackground extends Mage_
         }
         return '';
     }
+     protected function _isAllowed()
+    {
+        return Mage::getSingleton('admin/session')->isAllowed('vijay_custombackground/background');
+    }
 }
